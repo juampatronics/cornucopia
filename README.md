@@ -12,11 +12,29 @@ backend, and therefore runs **on the CPU or GPU**.
 Cornucopia is *intended* to be used on the GPU for on-line augmentation.
 A quick [benchmark](docs/examples/benchmark.ipynb) of affine and elastic augmentation
 shows that while cornucopia is slower than [TorchIO](https://github.com/fepegar/torchio)
-on the CPU (~ 3s vs 1s), it is greatly accelerated on the GPU (~ 50ms).
+on the CPU (~ 3s vs 1s), it is greatly accelerated on the GPU (~ 50ms). Note that 
+a cornucopia adapter will be available in 
+[TorchIO v2](https://docs.torchio.org/2.0/reference/transforms/cornucopia_adapter/?h=corn), 
+allowing seamless intergration of cornucopia transformations with TorchIO pipelines.
 
-Since gradients are not expected to backpropagate through its layers, it can
-theoretically be used within any dataloader pipeline,
-independent of the downstream learning framework (pytorch, tensorflow, jax, ...).
+
+
+Since version 0.4, all layers are differentiable, allowing augmentation
+parameters to be optimized via backpropagation. 
+The **Learn2Synth** framework examplifies this application:
+
+- 📄 [Paper](https://openaccess.thecvf.com/content/ICCV2025/papers/Hu_Learn2Synth_Learning_Optimal_Data_Synthesis_Using_Hypergradients_for_Brain_Image_ICCV_2025_paper.pdf)
+- 💻 [Code](https://github.com/HuXiaoling/Learn2Synth)
+- 📖 Bibtex
+  ```bibtex
+  @inproceedings{hu2025learn2synth,
+    title={Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation},
+    author={Hu, Xiaoling and Zeng, Xiangrui and Puonti, Oula and Iglesias, Juan Eugenio and Fischl, Bruce and Balbastre, Ya{\"e}l},
+    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    pages={20368--20378},
+    year={2025}
+  }
+  ```
 
 ## Installation
 
