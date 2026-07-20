@@ -15,7 +15,7 @@ shows that while cornucopia is slower than [TorchIO](https://github.com/fepegar/
 on the CPU (~ 3s vs 1s), it is greatly accelerated on the GPU (~ 50ms). Note that 
 a cornucopia adapter will be available in 
 [TorchIO v2](https://docs.torchio.org/2.0/reference/transforms/cornucopia_adapter/?h=corn), 
-allowing seamless intergration of cornucopia transformations with TorchIO pipelines.
+allowing seamless integration of cornucopia transformations with TorchIO pipelines.
 
 
 
