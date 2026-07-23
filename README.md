@@ -17,7 +17,7 @@ a cornucopia adapter will be available in
 [TorchIO v2](https://docs.torchio.org/2.0/reference/transforms/cornucopia_adapter/?h=corn), 
 allowing seamless integration of cornucopia transformations with TorchIO pipelines.
 
-
+---
 
 Since version 0.4, all layers are differentiable, allowing augmentation
 parameters to be optimized via backpropagation. 
